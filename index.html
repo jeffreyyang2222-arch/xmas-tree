@@ -92,16 +92,29 @@
         @keyframes blink { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
     </style>
 
-    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-    <script src="https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js"></script>
-    <script src="https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/RenderPass.js"></script>
-    <script src="https://unpkg.com/three@0.160.0/examples/jsm/postprocessing/UnrealBloomPass.js"></script>
-    <script src="https://unpkg.com/three@0.160.0/examples/jsm/shaders/LuminosityHighPassShader.js"></script>
-    <script src="https://unpkg.com/three@0.160.0/examples/jsm/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+    // 注意：这里必须这样写 import
+    import * as THREE from 'three';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+    // 接下来是你的代码逻辑...
+    // 比如：const scene = new THREE.Scene();
+</script>
 </head>
 <body>
 
